@@ -1,14 +1,14 @@
 {
-  "name": "vite-vue3-ts-component-template",
-  "description": "模板",
+  "name": "lc-vue-text-tip",
+  "description": "文字自动tooltip",
   "version": "0.0.0",
   "type": "module",
-  "main": "./dist/vite-vue3-ts-component-template.umd.cjs",
-  "module": "./dist/vite-vue3-ts-component-template.js",
+  "main": "./dist/lc-vue-text-tip.umd.cjs",
+  "module": "./dist/lc-vue-text-tip.js",
   "exports": {
     ".": {
-      "import": "./dist/vite-vue3-ts-component-template.js",
-      "require": "./dist/vite-vue3-ts-component-template.umd.cjs"
+      "import": "./dist/lc-vue-text-tip.js",
+      "require": "./dist/lc-vue-text-tip.umd.cjs"
     }
   },
   "files": [

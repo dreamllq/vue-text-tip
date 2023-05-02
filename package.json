@@ -1,7 +1,7 @@
 {
   "name": "lc-vue-text-tip",
   "description": "文字自动tooltip",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "main": "./dist/lc-vue-text-tip.umd.cjs",
   "module": "./dist/lc-vue-text-tip.js",

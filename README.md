@@ -21,16 +21,16 @@ npm i lc-vue-text-tip
 
 ```vue
 <script setup lang="ts">
-  import { VueTextTip } from 'lc-vue-text-tip'
+  import { TextTip } from 'lc-vue-text-tip'
 </script>
 
 <template>
   <div>
-    <VueTextTip msg='阿斯顿发射点发射点发射点阿斯顿发射点发射点'/>  
+    <TextTip msg='阿斯顿发射点发射点发射点阿斯顿发射点发射点'/>  
   </div>
 
   <div style='width: 100px;'>
-    <VueTextTip msg='阿斯顿发射点发射点发射点阿斯顿发射点发射点'/>  
+    <TextTip msg='阿斯顿发射点发射点发射点阿斯顿发射点发射点'/>  
   </div>
 </template>
 ```

@@ -1,1 +1,1 @@
-export { default as VueTextTip } from './text-tip.vue';
+export { default as TextTip } from './text-tip.vue';

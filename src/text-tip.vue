@@ -27,7 +27,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, watch, nextTick } from 'vue';
+import { ref, watch, nextTick, PropType } from 'vue';
 import { useElementSize } from '@vueuse/core';
 import { get } from 'lodash';
 const props = defineProps({
@@ -40,7 +40,7 @@ const props = defineProps({
     default: undefined
   },
   placement: {
-    type: String,
+    type: String as PropType<'top'|'top-start'|'top-end'|'bottom'|'bottom-start'|'bottom-end'|'left'|'left-start'|'left-end'|'right'|'right-start'|'right-end'>,
     default: 'right'
   }
 });

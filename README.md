@@ -43,3 +43,4 @@ npm i lc-vue-text-tip
 | ---- | ---- | ---- | ---- |
 | msg | 文字 | string | '' |
 | popperClass | popper class | string | - |
+| placement |	出现位置  |	top/top-start/top-end/bottom/bottom-start/bottom-end/left/left-start/left-end/right/right-start/right-end |	right |

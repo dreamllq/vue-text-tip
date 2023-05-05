@@ -11,7 +11,7 @@
       v-else
       class='box-item'
       effect='light'
-      placement='right'
+      :placement='placement'
       :popper-class='props.popperClass'
     >
       <template #content>
@@ -38,6 +38,10 @@ const props = defineProps({
   popperClass: {
     type: String,
     default: undefined
+  },
+  placement: {
+    type: String,
+    default: 'right'
   }
 });
 const testSpan = ref();

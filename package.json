@@ -5,12 +5,6 @@
   "type": "module",
   "main": "./dist/lc-vue-text-tip.umd.cjs",
   "module": "./dist/lc-vue-text-tip.js",
-  "exports": {
-    ".": {
-      "import": "./dist/lc-vue-text-tip.js",
-      "require": "./dist/lc-vue-text-tip.umd.cjs"
-    }
-  },
   "files": [
     "/dist",
     "/docs/.vitepress/dist"

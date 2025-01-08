@@ -77,6 +77,10 @@ watch(width, () => {
   computedStyle();
 });
 
+watch(() => props.msg, () => {
+  computedStyle();
+});
+
 </script>
 <style scoped>
 .tip-box{

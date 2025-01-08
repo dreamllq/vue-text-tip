@@ -12,6 +12,7 @@
       class='box-item'
       effect='light'
       :placement='placement'
+      :enterable='props.enterable'
       :popper-class='props.popperClass'
     >
       <template #content>
@@ -19,7 +20,7 @@
           {{ props.msg }}
         </div>
       </template>
-      <div class='tip-box'>
+      <div class='tip-box' :style='tipBoxStyle'>
         {{ props.msg }}
       </div>
     </el-tooltip>
@@ -27,7 +28,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, watch, nextTick, PropType } from 'vue';
+import { ref, watch, nextTick, PropType, computed } from 'vue';
 import { useElementSize } from '@vueuse/core';
 import { get } from 'lodash';
 const props = defineProps({
@@ -42,6 +43,14 @@ const props = defineProps({
   placement: {
     type: String as PropType<'top'|'top-start'|'top-end'|'bottom'|'bottom-start'|'bottom-end'|'left'|'left-start'|'left-end'|'right'|'right-start'|'right-end'>,
     default: 'right'
+  },
+  linClamp: {
+    type: Number,
+    default: 1
+  },
+  enterable: {
+    type: Boolean,
+    default: true
   }
 });
 const testSpan = ref();
@@ -49,6 +58,7 @@ const tipBody = ref();
 const isOver = ref(false);
 const fBody = ref();
 const { width } = useElementSize(fBody);
+const tipBoxStyle = computed(() => ({ '-webkit-line-clamp': props.linClamp }));
 
 async function computedStyle() {
   isOver.value = false;
@@ -67,11 +77,11 @@ watch(width, () => {
 </script>
 <style scoped>
 .tip-box{
-  white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
   width:100%;
-  display: block;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
 }
 .test-span{
   display: inline-block;

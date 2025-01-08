@@ -18,7 +18,11 @@ npm i lc-vue-text-tip
 </div>
 
 <div style='width: 100px;'>
-  <TextTip msg='阿斯顿发射点发射点发射点阿斯顿发射点发射点' :linClamp='3'/>  
+  <TextTip msg='阿斯顿发射点发射点发射点阿斯顿发射点发射点' :lineClamp='3'/>  
+</div>
+
+<div style='width: 100px;'>
+  <TextTip msg='阿斯顿发射点发射点发射点阿斯顿发射点发射点' :lineClamp='5'/>  
 </div>
 
 ```vue

@@ -6,6 +6,9 @@
         class='test-span'>
         {{ props.msg }}
       </div>
+      <div class='text-span'>
+        {{ props.msg }}
+      </div>
     </div>
     <el-tooltip
       v-else
@@ -44,7 +47,7 @@ const props = defineProps({
     type: String as PropType<'top'|'top-start'|'top-end'|'bottom'|'bottom-start'|'bottom-end'|'left'|'left-start'|'left-end'|'right'|'right-start'|'right-end'>,
     default: 'right'
   },
-  linClamp: {
+  lineClamp: {
     type: Number,
     default: 1
   },
@@ -58,13 +61,13 @@ const tipBody = ref();
 const isOver = ref(false);
 const fBody = ref();
 const { width } = useElementSize(fBody);
-const tipBoxStyle = computed(() => ({ '-webkit-line-clamp': props.linClamp }));
+const tipBoxStyle = computed(() => ({ '-webkit-line-clamp': props.lineClamp }));
 
 async function computedStyle() {
   isOver.value = false;
   await nextTick();
   let spanWidth = get(testSpan.value, 'offsetWidth', 0);
-  if (spanWidth > tipBody.value.clientWidth) {
+  if (spanWidth > tipBody.value.clientWidth && (spanWidth / tipBody.value.clientWidth) > props.lineClamp) {
     isOver.value = true;
     return;
   }
@@ -82,9 +85,18 @@ watch(width, () => {
   width:100%;
   display: -webkit-box;
   -webkit-box-orient: vertical;
+  word-break: break-all;
 }
 .test-span{
   display: inline-block;
   white-space: nowrap;
+  position: fixed;
+  top: -9999px;
+  left: -9999px;
+}
+
+.text-span{
+  display: inline-block;
+  word-break: break-all;
 }
 </style>
